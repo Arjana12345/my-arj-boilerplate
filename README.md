@@ -59,3 +59,20 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+## ###############################################
+## Step to installtion and configuration
+## #############################################
+1) composer create-project laravel/laravel my-arj-boilerplate
+2) cd my-arj-boilerplate/
+3) php artisan migrate
+4) php artisan serve
+5) npm install
+6) npm run dev
+7) cd .. 
+## Set permission in directory 
+8) sudo chmod -R 777 your-project-directory
+9) Go to your-project-directory by cd 
+10) php artisan serve
+
