@@ -10,11 +10,8 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home/index');   ## index is file inside home folder
 });
-
-Route::get('/home', function () {
-    return view('home.index', ['name' => 'Arjana']);
-});
 */
+
 
 # pass array
 Route::get('/home', function () {
@@ -32,11 +29,9 @@ Route::get('/home/people', function () {
     return view('home.people', ['people' => $data]);
 });
 
-Route::get('/home/people/', function () {
+Route::get('/home/people/{id}', function ($id) {
     $data = [
-        ["id" => '1',"name" => "Arjana", 'area' => "php"],
-        ["id" => '2',"name" => "suniti", 'area' => "php"]
-
-    ];
-    return view('home.people', ['people' => $data]);
+        ["id" => '1',"name" => "Arjana", 'area' => "php"] ## getting form DB 
+       ];
+    return view('home.people_details', ['people' => $data[0]]);
 });
