@@ -76,3 +76,11 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 9) Go to your-project-directory by cd 
 10) php artisan serve
 
+
+# Routes 
+
+# Layout
+make components folder into view this is laravel designed
+{{$slot}} -> this laravel keyword
+use in all blade.php files <x-layout> your html </x-layout>
+this layout is a file under components
