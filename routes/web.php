@@ -39,3 +39,4 @@ Route::get('/home/people/{id}', function ($id) {
 
 
 Route::get('/companies_type', [CompaniesTypeController::class,'index'])->name('companies_type.index');
+Route::get('/companies_type/create', [CompaniesTypeController::class,'create'])->name('companies_type.create');

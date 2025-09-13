@@ -10,4 +10,10 @@ class CompaniesTypeController extends Controller
     {
         return view('companies_type.index');
     }
+
+    public function create()
+    {
+        return view('companies_type.create');
+    }
+    
 }
