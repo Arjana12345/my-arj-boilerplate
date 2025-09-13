@@ -76,11 +76,52 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 9) Go to your-project-directory by cd 
 10) php artisan serve
 
-
+## #########
 # Routes 
+## #########
 
+## #########
 # Layout
+## #########
 make components folder into view this is laravel designed
 {{$slot}} -> this laravel keyword
 use in all blade.php files <x-layout> your html </x-layout>
 this layout is a file under components
+
+## #############
+## MVC - step
+## #############
+1)php artisan migrate 
+    laravel create default table into DB 
+    like users, session, migration 
+
+2) php artisan make:migration companies_type
+    >A migration file generates into database/migrations 
+    >update that file add schema for table = companies_type
+
+3) php artisan migrate
+    > laravel generates table into your DB with schema
+    
+4) php artisan make:model Companies_type
+    > model name is always singular and first letter in caps
+    >it generates model into app/Models
+
+5) php artisan make:controller CompaniesTypeController
+    > add Controller keyword into name
+    
+6) create view - Resource/views/companies_type/index.blade.php 
+
+7) include controller into web.php and add routes 
+    >Route::get('/companies_type', [CompaniesTypeController::class,'index'])->name('companies_type.index');
+    here :         /companies_type = route url
+           CompaniesTypeController = controller class
+                             index = method 
+              companies_type.index = view directory file
+
+    > add index function into controller
+    > add attributes into model 
+
+8) Run php artisan serve -> mvc ready http://localhost:8000/companies_type/
+
+
+
