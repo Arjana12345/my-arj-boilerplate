@@ -32,7 +32,7 @@ Route::get('/home/people', function () {
 
 Route::get('/home/people/{id}', function ($id) {
     $data = [
-        ["id" => '1',"name" => "Arjana", 'area' => "php"] ## getting form DB 
+        ["id" => '1',"name" => "Arjana", 'area' => "php"] ## getting from DB 
        ];
     return view('home.people_details', ['people' => $data[0]]);
 });

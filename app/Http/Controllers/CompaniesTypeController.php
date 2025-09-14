@@ -18,7 +18,7 @@ class CompaniesTypeController extends Controller
 
     public function store(Request $request)
     {
-        dd($request);
+        dd($request->name);
     }
     
 }
