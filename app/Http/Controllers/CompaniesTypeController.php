@@ -15,5 +15,10 @@ class CompaniesTypeController extends Controller
     {
         return view('companies_type.create');
     }
+
+    public function store(Request $request)
+    {
+        dd($request);
+    }
     
 }

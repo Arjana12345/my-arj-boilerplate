@@ -7,7 +7,9 @@
 </head>
 <body>
     <h1>Create Companies Type</h1>
-    <form method="post" action="">
+    <form method="post" action="{{ route('companies_type.store') }}">
+        @csrf
+        @method('post')
         <input type="text" name="name" placeholder="Name">
         <input type="text" name="description" placeholder="Description">
         <input type="submit" name="Submit">
