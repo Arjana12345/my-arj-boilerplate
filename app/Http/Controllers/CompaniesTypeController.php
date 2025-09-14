@@ -9,7 +9,9 @@ class CompaniesTypeController extends Controller
 {
     public function index()
     {
-        return view('companies_type.index');
+        $all_companies_types = Companies_type::all();
+        return view('companies_type.index', ['companies_type' => $all_companies_types]);
+        
     }
 
     public function create()
