@@ -11,13 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('companies_type', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->longText('description')->nullable();
-            $table->integer('phone');
-            $table->unsignedInteger('created_at');
-        });
+        Schema::rename('companies_type', 'companies_types');
+       
     }
 
     /**
@@ -25,9 +20,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::table('companies_type', function (Blueprint $table) {
+            //
+        });
     }
-
- 
-
 };
