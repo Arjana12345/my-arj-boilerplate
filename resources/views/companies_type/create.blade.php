@@ -7,6 +7,13 @@
 </head>
 <body>
     <h1>Create Companies Type</h1>
+    @if($errors->any())
+        <ul>
+        @foreach($errors->all() as $error)
+            {{$error}}
+        @endforeach 
+    @endif
+    </ul>
     <form method="post" action="{{ route('companies_type.store') }}">
         @csrf
         @method('post')
