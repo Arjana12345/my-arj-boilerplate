@@ -123,5 +123,15 @@ this layout is a file under components
 
 8) Run php artisan serve -> mvc ready http://localhost:8000/companies_type/
 
+9) There is some example for DB migration cmd
+    Rename table => php artisan make:migration rename companies_type to companies_types
+                    Then  Add schema into migration file
+
+    
+    Update column updated_at => php artisan make:migration add_updated_at_to_companies_types
+                    Then update schema to update size
+
+    Alter column name => php artisan make:migration alter_created_at_precision_in_companies_types_table --table=companies_types
+    Then  Add schema into migration file
 
 
