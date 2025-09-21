@@ -59,7 +59,13 @@ class CompaniesTypeController extends Controller
         $data['updated_at'] = now();
 
         $company_data->update($data);
-        return redirect(route('companies_type.index'))->with('success', 'updated successfully');
+        return redirect(route('companies_type.index'))->with('success', 'Updated successfully');
+    }
+
+    public function destroy(Companies_type $company_data)
+    {
+        $company_data->delete();
+        return redirect(route('companies_type.index'))->with('success', 'Deleted successfully');
     }
     
 }

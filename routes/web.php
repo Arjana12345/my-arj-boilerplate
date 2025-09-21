@@ -45,3 +45,4 @@ Route::get('/companies_type/create', [CompaniesTypeController::class,'create'])-
 Route::post('/companies_type', [CompaniesTypeController::class,'store'])->name('companies_type.store');
 Route::get('/companies_type/{company_data}/update', [CompaniesTypeController::class,'update'])->name('companies_type.update');
 Route::put('/companies_type/{company_data}/update_store', [CompaniesTypeController::class,'update_store'])->name('companies_type.update_store');
+Route::delete('/companies_type/{company_data}/destroy', [CompaniesTypeController::class,'destroy'])->name('companies_type.destroy');
