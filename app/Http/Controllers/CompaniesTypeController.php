@@ -38,5 +38,28 @@ class CompaniesTypeController extends Controller
 
 
     }
+
+    public function update(Companies_type $company_data)
+    {
+        #dd($company_data);
+        return view('companies_type.update', ["company_data" => $company_data]);
+    }
+
+    public function update_store(Companies_type $company_data, Request $request)
+    {
+        $data = $request->validate([
+            
+            'name'          => 'required',      # form fields
+            'description'   => 'required'      # required|numeric|unique|... 
+            
+            ]            
+        );
+
+       
+        $data['updated_at'] = now();
+
+        $company_data->update($data);
+        return redirect(route('companies_type.index'))->with('success', 'updated successfully');
+    }
     
 }
