@@ -15,6 +15,7 @@ class Webguard
      */
     public function handle(Request $request, Closure $next): Response
     {
+        echo 'Middleware working';
         return $next($request);
     }
 }

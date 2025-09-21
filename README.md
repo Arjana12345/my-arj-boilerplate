@@ -146,3 +146,5 @@ Route::group(['prefix' => '/your prefix'],function(){
 ## Middleware
 ############################
 pht artisan make:middleware your_middleware_name
+
+In Laravel 11 and later versions, the kernel.php files (both app/Http/Kernel.php and app/Console/Kernel.php) have been removed as part of a streamlined application structure. Their functionalities are now managed through a more centralized and simplified approach within the framework's core and the bootstrap/app.php file. 
