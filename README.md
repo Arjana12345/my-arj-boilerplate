@@ -135,3 +135,14 @@ this layout is a file under components
     Then  Add schema into migration file
 
 
+############################
+## Route group
+############################
+Route::group(['prefix' => '/your prefix'],function(){
+ add here your routes
+});
+
+############################
+## Middleware
+############################
+pht artisan make:middleware your_middleware_name
