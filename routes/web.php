@@ -1,9 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CompaniesTypeController;
 
 Route::get('/', function () {
-    return view('welcome'); ## defasult welcome page by laravel
+    return view('welcome'); ## default welcome page by laravel
 });
 
 /*
@@ -31,7 +32,24 @@ Route::get('/home/people', function () {
 
 Route::get('/home/people/{id}', function ($id) {
     $data = [
-        ["id" => '1',"name" => "Arjana", 'area' => "php"] ## getting form DB 
+        ["id" => '1',"name" => "Arjana", 'area' => "php"] ## getting from DB 
        ];
     return view('home.people_details', ['people' => $data[0]]);
+});
+
+####################
+# CRUD route
+####################
+
+#########################
+## Route group
+##########################
+Route::group(['prefix' => '/companies_type'],function(){
+Route::get('/', [CompaniesTypeController::class,'index'])->name('companies_type.index');
+Route::get('/create', [CompaniesTypeController::class,'create'])->name('companies_type.create');
+Route::post('/', [CompaniesTypeController::class,'store'])->name('companies_type.store');
+Route::get('/{company_data}/update', [CompaniesTypeController::class,'update'])->name('companies_type.update');
+Route::put('/{company_data}/update_store', [CompaniesTypeController::class,'update_store'])->name('companies_type.update_store');
+Route::delete('/{company_data}/destroy', [CompaniesTypeController::class,'destroy'])->name('companies_type.destroy');
+
 });
