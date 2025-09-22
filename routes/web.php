@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompaniesTypeController;
-
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
     return view('welcome'); ## default welcome page by laravel
@@ -65,4 +65,27 @@ Route::middleware(['session_check'])->group(function(){
 Route::get('/no-access', function () {
    echo 'Sorry..!';
    die;
+});
+
+
+####################
+## Add session 
+## by pass login
+###################
+# pass array
+Route::get('/set-session', function (Request $request) {
+    $request->session()->put('user_id','1');
+    return redirect('/get-all-session');
+});
+
+Route::get('/get-all-session', function (Request $request) {
+    $all_session = session()->all();
+    print_r($all_session);
+    
+});
+
+Route::get('/unset-session', function (Request $request) {
+    $all_session = session()->forget('user_id');
+    return redirect('/get-all-session');
+    
 });
